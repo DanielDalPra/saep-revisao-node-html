@@ -1,20 +1,24 @@
-# Publicar quando a autenticação estiver disponível
+# Repositório no GitHub
 
-O repositório Git local está pronto. O destino já foi criado pelo usuário: https://github.com/DanielDalPra/saep-revisao-node-html. O terminal isolado não enxerga uma credencial válida, e o conector está autenticado em outra conta sem permissão de escrita nesse destino.
+Material publicado em https://github.com/DanielDalPra/saep-revisao-node-html.
 
-Dentro desta pasta, autentique na conta desejada:
-
-```powershell
-gh auth login
-gh api user --jq .login
-```
-
-Confira o nome da conta retornado. Depois:
+## Baixar em outro computador
 
 ```powershell
-git push -u origin main
+git clone https://github.com/DanielDalPra/saep-revisao-node-html.git
+cd saep-revisao-node-html
+npm ci
+npm start
 ```
 
-Esse comando envia o commit local ao remoto origin já configurado. O destino foi criado como público pelo usuário. Não use force push. Se o CLI pedir configuração do protocolo Git, escolha HTTPS.
+Abra http://localhost:3000 e use admin / 123456. Comece pelo arquivo COMECE-AQUI.md.
 
-Se preferir, após se autenticar, volte ao chat e peça para concluir a publicação. Não envie token nem senha no chat.
+## Enviar suas alterações de estudo
+
+```powershell
+git add .
+git commit -m "Meus exercicios de revisao"
+git push
+```
+
+O primeiro envio foi concluído depois de liberar o acesso à autenticação do Windows. Não é necessário criar outro repositório. Nunca envie senhas pessoais, tokens ou arquivos .env reais.
