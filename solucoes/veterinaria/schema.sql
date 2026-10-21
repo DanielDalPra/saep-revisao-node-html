@@ -1,0 +1,17 @@
+-- Execute em banco NOVO de estudo. Não apaga tabelas existentes.
+CREATE TABLE IF NOT EXISTS usuarios (
+ id SERIAL PRIMARY KEY, nome VARCHAR(100) NOT NULL,
+ login VARCHAR(50) UNIQUE NOT NULL, senha VARCHAR(255) NOT NULL
+);
+CREATE TABLE IF NOT EXISTS tutores (
+ id SERIAL PRIMARY KEY, nome VARCHAR(100) NOT NULL,
+ cpf VARCHAR(255) NOT NULL, telefone VARCHAR(20)
+);
+CREATE TABLE IF NOT EXISTS pets (
+ id SERIAL PRIMARY KEY, nome VARCHAR(100) NOT NULL,
+ especie VARCHAR(50), tutor_id INTEGER NOT NULL REFERENCES tutores(id)
+);
+CREATE TABLE IF NOT EXISTS agendamentos (
+ id SERIAL PRIMARY KEY, pet_id INTEGER NOT NULL REFERENCES pets(id),
+ data_agendamento DATE NOT NULL, observacao VARCHAR(255)
+);

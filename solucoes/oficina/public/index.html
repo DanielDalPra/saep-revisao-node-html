@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Oficina mecânica · Laboratório SAEP</title><link rel="stylesheet" href="style.css"><script type="module" src="app.js"></script></head>
+<body><header><span>LABORATÓRIO SAEP / NODE + HTML</span><h1>Oficina mecânica</h1><p>Entenda o fluxo. Faça uma alteração. Teste de novo.</p></header>
+<main><p id="mensagem" role="status" aria-live="polite"></p>
+<section id="entrada"><h2>1. Entrar</h2><p>Dados de treino: <code>admin</code> / <code>123456</code></p>
+<form id="login"><label>Login<input name="login" required autocomplete="username"></label>
+<label>Senha<input name="senha" type="password" required autocomplete="current-password"></label><button>Entrar</button></form></section>
+<div id="sistema" hidden><section><h2>Olá, <span id="nome-usuario"></span></h2>
+<nav><a href="#pessoas">clientes</a><a href="#filhos">veiculos</a><a href="#eventos">ordens_servico</a><button id="sair" type="button">Sair</button></nav></section>
+<section id="pessoas"><h2>2. clientes: CRUD + busca</h2>
+<form id="busca"><label>Buscar por nome<input name="termo" placeholder="Ex.: Ana"></label><button>Buscar</button></form>
+<form id="cadastro"><input name="id" type="hidden"><label>Nome<input name="nome" required maxlength="100"></label>
+<label>CPF de treino<input name="cpf" required maxlength="20"></label><label>Telefone<input name="telefone" maxlength="20"></label>
+<button>Salvar</button><button id="cancelar" type="button">Cancelar edição</button></form>
+<div class="rolagem"><table><thead><tr><th>ID</th><th>Nome</th><th>CPF</th><th>Telefone</th><th>Ações</th></tr></thead><tbody id="lista"></tbody></table></div></section>
+<section id="filhos"><h2>3. veiculos: associação com cliente</h2><form id="cadastro-filho">
+<label>placa<input name="placa" required maxlength="100"></label><label>modelo<input name="modelo" maxlength="50"></label>
+<label>cliente<select name="cliente_id" id="responsavel" required></select></label><button>Cadastrar</button></form><ul id="lista-filhos"></ul></section>
+<section id="eventos"><h2>4. ordens_servico: JOIN + data</h2><p>Ordem crescente de data. Edite uma data e observe a lista reordenar.</p>
+<div class="rolagem"><table><thead><tr><th>ID</th><th>veiculo</th><th>modelo</th><th>cliente</th><th>CPF</th><th>Telefone</th><th>Descrição</th><th>Data / ação</th></tr></thead><tbody id="lista-eventos"></tbody></table></div></section></div>
+<footer>Material de estudo independente. Sem CDN: HTML, CSS e JavaScript locais.</footer></main></body></html>
